@@ -78,23 +78,23 @@ let locale = 'en';
 // you can load/fetch these from files or keep them hardcoded.
 let messages = {
 	en: {
-		basic: 'button',
-		// can have variables
-		var: 'hello, {name}',
-		// can be nested
-		deep: {
-			one: 'one',
-			two: 'two',
-		},
-	},
-	ar: {
-		basic: 'زر',
-		var: 'مرحبا, {name}',
-		deep: {
-			one: 'واحد',
-			two: 'اثنان',
-		},
-	},
+	    basic: 'button',
+        // can have variables
+        var: 'hello, {name}',
+        // can be nested
+        deep: {
+            one: 'one',
+            two: 'two',
+        },
+    },
+    ar: {
+        basic: 'زر',
+        var: 'مرحبا, {name}',
+        deep: {
+            one: 'واحد',
+            two: 'اثنان',
+        },
+    },
 };
 
 // finally, pass them to AlpineI18n:
@@ -115,7 +115,7 @@ Following the example settings above:
 
 ```html
 <div x-data>
-	<button x-text="$t('basic')"></button>
+    <button x-text="$t('basic')"></button>
 </div>
 ```
 
@@ -151,7 +151,7 @@ This will make the span's text "hello, rafik"!
 to set a fallback locale for partially-translated values:
 
 ```js
-document.addEventListener('alpine-i18n:ready', function () {	
+document.addEventListener('alpine-i18n:ready', function () {
     window.AlpineI18n.fallbackLocale = 'en';
 }
 ```
@@ -198,16 +198,16 @@ AlpineI18n.locale = 'ar';
 
 ```html
 <script>
-	// define the RTL locales you support
-	var rtlLocales = ['ar', 'fa'];
-	// listen to locale changes
-	window.addEventListener('alpine-i18n:locale-change', function () {
-		if (rtlLocales.includes(window.AlpineI18n.locale)) {
-			document.body.setAttribute('dir', 'rtl');
-		} else {
-			document.body.removeAttribute('dir');
-		}
-	});
+    // define the RTL locales you support
+    var rtlLocales = ['ar', 'fa'];
+    // listen to locale changes
+    window.addEventListener('alpine-i18n:locale-change', function () {
+        if (rtlLocales.includes(window.AlpineI18n.locale)) {
+            document.body.setAttribute('dir', 'rtl');
+        } else {
+            document.body.removeAttribute('dir');
+        }
+    });
 </script>
 ```
 
